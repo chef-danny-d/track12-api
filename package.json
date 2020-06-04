@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "devstart": "babel-node ./app",
     "start": "npm run build && node ./build/app",
-    "build": "npm run clean && npm run babel-build",
-    "babel-build": "babel -d ./build . -s",
+    "build": "babel -d ./build . -s",
     "clean": "rm -rf ./build && mkdir build",
     "server": "nodemon --exec babel-node ./app"
   },
