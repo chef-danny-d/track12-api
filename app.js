@@ -15,7 +15,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 app.use('/', home)
-
-app.listen(3600, () => console.log(`Server is listening on port 3600`))
+app.set('port', process.env.port || 3600)
+app.listen(app.get('port'), () =>
+    console.log(`Server is listening on port ${app.get('port')}`)
+)
 
 export default app
