@@ -6,7 +6,7 @@
     "devstart": "babel-node ./app",
     "start": "npm run build && node ./build/app",
     "build": "npm run clean && npm run babel-build",
-    "babel-build": "babel --ignore node_modules -d ./build . -s",
+    "babel-build": "babel -d ./build . -s",
     "clean": "rm -rf ./build && mkdir build",
     "server": "nodemon --exec babel-node ./app"
   },
