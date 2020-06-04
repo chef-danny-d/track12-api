@@ -25,6 +25,7 @@ const Entry = new mongoose.Schema({
     },
     numReports: {
         type: Number,
+        default: 1,
     },
     spotted: {
         type: Date,

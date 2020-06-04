@@ -5,24 +5,13 @@ import mongoose from 'mongoose'
 require('dotenv').config()
 import home from './routes/index'
 const app = express()
+import { database } from './config/db'
 
-const config = {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-}
-mongoose
-    .connect(process.env.db, config)
-    .then(() => {
-        console.log('Connected to db')
-    })
-    .catch((err) => {
-        console.error(err)
-    })
+database()
 
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 app.use('/', home)
