@@ -1,7 +1,5 @@
 import express from 'express'
-import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-import mongoose from 'mongoose'
 require('dotenv').config()
 import home from './routes/index'
 const app = express()
@@ -12,7 +10,6 @@ database()
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
 
 app.use('/', home)
 app.set('port', process.env.port || 3600)
