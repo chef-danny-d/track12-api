@@ -1,7 +1,8 @@
-import mongoose from 'mongoose'
+//import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 require('dotenv').config()
 
-export const database = () => {
+const database = () => {
     const options = {
         useUnifiedTopology: true,
         useNewUrlParser: true,
@@ -16,3 +17,5 @@ export const database = () => {
             console.error(err)
         })
 }
+
+module.exports = database

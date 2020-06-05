@@ -1,4 +1,5 @@
-import mongoose from 'mongoose'
+//import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const Entry = new mongoose.Schema({
     lat: {
@@ -33,4 +34,4 @@ const Entry = new mongoose.Schema({
     },
 })
 
-export default mongoose.model('Entry', Entry, 'position')
+module.exports = mongoose.model('Entry', Entry, 'position')

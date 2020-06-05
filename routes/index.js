@@ -1,6 +1,6 @@
-import express from 'express'
+const express = require('express')
 const home = express.Router()
-import Entry from '../models/Entry'
+const Entry = require('../models/Entry')
 
 /* GET home page. */
 home.get('/', (req, res, next) => {
@@ -38,4 +38,4 @@ home.post('/', (req, res, next) => {
         })
 })
 
-export default home
+module.exports = home

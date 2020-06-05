@@ -1,9 +1,9 @@
-import express from 'express'
-import logger from 'morgan'
 require('dotenv').config()
-import home from './routes/index'
+const express = require('express')
 const app = express()
-import { database } from './config/db'
+const logger = require('morgan')
+const home = require('./routes/index')
+const database = require('./config/db')
 
 database()
 
@@ -17,4 +17,4 @@ app.listen(app.get('port'), () =>
     console.log(`Server is listening on port ${app.get('port')}`)
 )
 
-export default app
+module.exports = app
