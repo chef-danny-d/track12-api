@@ -4,13 +4,13 @@ const app = express()
 const logger = require('morgan')
 const home = require('./routes/index')
 const database = require('./config/db')
+const cors = require('cors');
 
+app.use(cors())
 database()
-
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
 app.use('/', home)
 app.set('port', process.env.port || 3600)
 app.listen(app.get('port'), () =>

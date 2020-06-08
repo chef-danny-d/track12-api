@@ -32,6 +32,11 @@ const Entry = new mongoose.Schema({
         type: Date,
         default: Date.now(),
     },
+    address: {
+        type: String,
+        default: '',
+        trim: true,
+    },
 })
 
 module.exports = mongoose.model('Entry', Entry, 'position')
